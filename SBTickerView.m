@@ -280,7 +280,7 @@
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [CATransaction begin];
         [CATransaction setAnimationDuration:_duration];
-        
+       [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
         [CATransaction setCompletionBlock:^{
             [_flipLayer removeFromSuperlayer], _flipLayer = nil;
             [_topFaceLayer removeFromSuperlayer], _topFaceLayer = nil;
